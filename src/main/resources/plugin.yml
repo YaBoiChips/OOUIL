@@ -24,3 +24,6 @@ commands:
   setdeaths:
     description: Set a players death count
     usage: /<command> <name> <int>
+  tellrole:
+    description: Tell a players role
+    usage: /<command>

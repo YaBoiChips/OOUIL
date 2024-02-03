@@ -36,7 +36,7 @@ public final class Oouil extends JavaPlugin implements Listener {
         this.getCommand("killed").setExecutor(new KilledCommand());
         this.getCommand("getrole").setExecutor(new GetRoleCommand());
         this.getCommand("setdeaths").setExecutor(new SetDeathsCommand());
-    }
+        this.getCommand("tellrole").setExecutor(new TellRoleCommand());}
 
     @Override
     public void onDisable() {
