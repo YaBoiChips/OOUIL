@@ -1,0 +1,26 @@
+name: Oouil
+version: '${project.version}'
+main: yaboichips.oouil.Oouil
+api-version: 1.20
+commands:
+  start:
+    description: starts the session
+    usage: /<command>
+  end:
+    description: ends the session
+    usage: /<command>
+  save:
+    description: save a person
+    usage: /<command> <name>
+  report:
+    description: report accomplice
+    usage: /<command> <name>
+  killed:
+    description: fixes kills if done indirectly or by trap
+    usage: /<command>
+  getrole:
+    description: get role book
+    usage: /<command>
+  setdeaths:
+    description: Set a players death count
+    usage: /<command> <name> <int>
