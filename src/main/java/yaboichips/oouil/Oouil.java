@@ -5,13 +5,13 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffectType;
 import yaboichips.oouil.commands.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 public final class Oouil extends JavaPlugin implements Listener {
@@ -23,8 +23,11 @@ public final class Oouil extends JavaPlugin implements Listener {
     public static Player doctor;
     public static Player custom;
     public static Player healed;
+
+    public static List<Player> infected = new ArrayList<>();
     public static Map<Player, Boolean> liarTest = new HashMap<>();
     public static final Logger LOGGER = Logger.getLogger("Minecraft");
+
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
@@ -44,12 +47,12 @@ public final class Oouil extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerHit(EntityDamageByEntityEvent event){
-        if (event.getDamager() == custom){
-            if (event.getEntity() instanceof Player) {
-                custom = null;
-                custom = (Player) event.getEntity();
-                custom.sendTitle("TAG, YOU'RE IT", "find someone to tag :p... soon", 30, 10, 30);
+    public void onPlayerHit(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player player = (Player) event.getEntity();
+            if (player.hasPotionEffect(PotionEffectType.POISON)) {
+                infected.add(player);
+                System.out.println(player + " is infected");
             }
         }
     }
