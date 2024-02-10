@@ -27,7 +27,7 @@ public class TellRoleCommand implements CommandExecutor {
         }
         else if (sender == Oouil.custom)
         {
-            player.sendTitle("TAG, YOU'RE IT", "find someone to tag :p... soon", 30, 10, 30);
+            player.sendTitle("CUSTOM", "Do /getrole to get your roles information", 30, 10, 30);
         }
         else
         {
