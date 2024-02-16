@@ -27,3 +27,6 @@ commands:
   tellrole:
     description: Tell a players role
     usage: /<command>
+  reportliar:
+    description: Reports the liar
+    usage: /<command> <name>

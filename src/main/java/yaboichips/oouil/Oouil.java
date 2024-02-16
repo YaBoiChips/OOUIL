@@ -26,6 +26,8 @@ public final class Oouil extends JavaPlugin implements Listener {
 
     public static List<Player> infected = new ArrayList<>();
     public static Map<Player, Boolean> liarTest = new HashMap<>();
+    public static Map<Player, Boolean> customTest = new HashMap<>();
+
     public static final Logger LOGGER = Logger.getLogger("Minecraft");
 
     @Override
@@ -39,7 +41,9 @@ public final class Oouil extends JavaPlugin implements Listener {
         this.getCommand("killed").setExecutor(new KilledCommand());
         this.getCommand("getrole").setExecutor(new GetRoleCommand());
         this.getCommand("setdeaths").setExecutor(new SetDeathsCommand());
-        this.getCommand("tellrole").setExecutor(new TellRoleCommand());}
+        this.getCommand("tellrole").setExecutor(new TellRoleCommand());
+        this.getCommand("reportliar").setExecutor(new ReportLiarCommand());
+}
 
     @Override
     public void onDisable() {

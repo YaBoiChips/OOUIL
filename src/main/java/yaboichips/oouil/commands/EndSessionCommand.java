@@ -16,6 +16,12 @@ public class EndSessionCommand implements CommandExecutor {
         Random rand = new Random();
         Player dead = Oouil.infected.get(rand.nextInt(Oouil.infected.size()));
         dead.damage(50);
+        if (Oouil.customTest.get(Oouil.custom)){
+            Oouil.liar.damage(50);
+        }
+        else{
+            Oouil.custom.damage(50);
+        }
         if (!Oouil.liarTest.get(Oouil.liar)) {
             Oouil.liar.damage(50);
             Oouil.accomplice.damage(50);

@@ -15,6 +15,7 @@ public class SaveCommand implements CommandExecutor {
             Oouil.healed = saved;
             saved.playSound(saved, Sound.BLOCK_AMETHYST_BLOCK_CHIME, 1, 1);
             saved.sendTitle("You Have Been Saved", "You may rest easy today", 30, 40, 40);
+            sender.sendMessage(saved.getName() + " has been saved!");
         }
         return true;
     }
